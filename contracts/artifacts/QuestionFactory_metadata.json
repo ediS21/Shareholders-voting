@@ -1,0 +1,322 @@
+{
+	"compiler": {
+		"version": "0.8.22+commit.4fc1097e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "oldDirector",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newDirector",
+						"type": "address"
+					}
+				],
+				"name": "DirectorSet",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "body",
+						"type": "string"
+					}
+				],
+				"name": "NewQuestion",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "body",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "positiveResults",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "negativeResults",
+						"type": "uint256"
+					}
+				],
+				"name": "QuestionResults",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newDirector",
+						"type": "address"
+					}
+				],
+				"name": "changeDirector",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_body",
+						"type": "string"
+					}
+				],
+				"name": "createQuestion",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
+					}
+				],
+				"name": "createShareholder",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "director",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getDirector",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "questions",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "body",
+						"type": "string"
+					},
+					{
+						"internalType": "uint32",
+						"name": "positiveVoteCount",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "negativeVoteCount",
+						"type": "uint32"
+					},
+					{
+						"internalType": "bool",
+						"name": "active",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "shareholderToQuestion",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "body",
+						"type": "string"
+					},
+					{
+						"internalType": "uint32",
+						"name": "positiveVoteCount",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "negativeVoteCount",
+						"type": "uint32"
+					},
+					{
+						"internalType": "bool",
+						"name": "active",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "shareholders",
+				"outputs": [
+					{
+						"internalType": "uint32",
+						"name": "weight",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "vote",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "viewResults",
+						"type": "uint32"
+					},
+					{
+						"internalType": "address",
+						"name": "shareholderAddress",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_questionId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_vote",
+						"type": "uint256"
+					}
+				],
+				"name": "vote",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"changeDirector(address)": {
+					"details": "Change director",
+					"params": {
+						"newDirector": "address of new director"
+					}
+				},
+				"getDirector()": {
+					"details": "Return director address ",
+					"returns": {
+						"_0": "address of director"
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/QuestionFactory.sol": "QuestionFactory"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Director.sol": {
+			"keccak256": "0x494925d9b400ea71e10cf06b4a18948efb5718a8fd5956d81691869af8eceba4",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://7773741b5b0d5dc5564d70b347216372a8eec36381d370cd0ecfe2ab08f0f800",
+				"dweb:/ipfs/QmRQa2xvNFxaVhoUfrP6kjwbXaq4BFpBc5DA55awvy2i2C"
+			]
+		},
+		"contracts/QuestionFactory.sol": {
+			"keccak256": "0xf28af7358736dd58a9fbc107d279a5f387c33e9806d495f80041919caadef6ab",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://0f7ccd1ab96fa123098cdeba0e3ebcd2720b30b1fcea852d647baf8f5cdb495e",
+				"dweb:/ipfs/Qme8Jf9M4VruReWn5oQrAfcWCbZoYJ7b3XSpVHPLUuKhaN"
+			]
+		},
+		"hardhat/console.sol": {
+			"keccak256": "0x7434453e6d3b7d0e5d0eb7846ffdbc27f0ccf3b163591263739b628074dc103a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://49355f780520494d1d5a0f01858385e51bb5280ce0ecfb960f16995065dca395",
+				"dweb:/ipfs/QmSwJ6C5QLz6xKeQZS8wbwjU1KxRFTYfwbGmtzisd5sRW4"
+			]
+		}
+	},
+	"version": 1
+}
